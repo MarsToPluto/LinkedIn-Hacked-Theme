@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Hacker Theme CSS Injector",
+  "version": "1.0",
+  "description": "Injects custom CSS into a specific domain.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"], 
+      "css": ["content.css"],
+      "js": ["content.js"]
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+/* Hacking Theme CSS */
+body {
+  background-color: #1f1f1f !important; /* Black background */
+  color: #00FF00 !important; /* Neon green text */
+  font-family: 'Courier New', Courier, monospace !important; /* Monospaced font for terminal-like feel */
+}
+
+h1, h2, h3, p {
+  color: #00FF00 !important; /* Neon green text */
+  text-shadow: 0 0 5px #00FF00 !important;
+}
+
+a {
+  color: #00FF00 !important; /* Neon green links */
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+}
+
+a:hover {
+  color: #FF0000 !important; /* Red on hover */
+  text-shadow: 0 0 10px #FF0000 !important;
+}
+
+.terminal {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 20px !important;
+  border: 2px solid #00FF00 !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 10px #00FF00 !important;
+  width: 80% !important;
+  max-width: 800px !important;
+  margin: auto !important;
+  animation: flicker 1.5s infinite alternate !important;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.9; }
+  100% { opacity: 1; }
+}
+
+.cursor {
+  display: inline-block !important;
+  background-color: #00FF00 !important;
+  width: 10px !important;
+  height: 20px !important;
+  margin-left: 5px !important;
+  animation: blink 0.7s infinite !important;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(10deg); }
+  40% { transform: skew(-10deg); }
+  60% { transform: skew(5deg); }
+  80% { transform: skew(-5deg); }
+  100% { transform: skew(0deg); }
+}
+
+.glitch {
+  color: #00FF00 !important;
+  position: relative !important;
+  animation: glitch 1s infinite !important;
+}
+
+.glitch:before, .glitch:after {
+  content: attr(data-text) !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #000 !important;
+  overflow: hidden !important;
+  clip: rect(0, 900px, 0, 0) !important;
+}
+
+.glitch:before {
+  left: 2px !important;
+  text-shadow: -2px 0 #ff00ff !important;
+  animation: glitch 2s infinite !important;
+}
+
+.glitch:after {
+  left: -2px !important;
+  text-shadow: -2px 0 #00ffff !important;
+  animation: glitch 2s infinite reverse !important;
+}
+
+
+.application-outlet{
+  background-color: #222 !important;
+}
+
+/*.pv-top-card__edit-photo .profile-photo-edit__preview{
+  left: -2px !important;
+  text-shadow: -2px 0 #00ffff !important;
+  animation: glitch 2s infinite reverse !important;
+}*/
+
+
+/* Glitch Effect for Specific Class */
+@keyframes glitch {
+  0% { 
+    transform: skew(0deg); 
+    opacity: 1;
+  }
+  10% { 
+    transform: skew(5deg); 
+    opacity: 0.8; 
+    text-shadow: 2px 0 #ff00ff;
+  }
+  20% { 
+    transform: skew(-5deg); 
+    opacity: 0.9; 
+    text-shadow: -2px 0 #00ffff;
+  }
+  30% { 
+    transform: skew(10deg); 
+    opacity: 0.7; 
+    text-shadow: 4px 0 #ff00ff;
+  }
+  40% { 
+    transform: skew(-10deg); 
+    opacity: 0.6; 
+    text-shadow: -4px 0 #00ffff;
+  }
+  50% { 
+    transform: skew(5deg); 
+    opacity: 0.5; 
+    text-shadow: 2px 0 #ff00ff;
+  }
+  60% { 
+    transform: skew(-5deg); 
+    opacity: 0.4; 
+    text-shadow: -2px 0 #00ffff;
+  }
+  70% { 
+    transform: skew(10deg); 
+    opacity: 0.3; 
+    text-shadow: 4px 0 #ff00ff;
+  }
+  80% { 
+    transform: skew(-10deg); 
+    opacity: 0.2; 
+    text-shadow: -4px 0 #00ffff;
+  }
+  90% { 
+    transform: skew(5deg); 
+    opacity: 0.1; 
+    text-shadow: 2px 0 #ff00ff;
+  }
+  100% { 
+    transform: skew(0deg); 
+    opacity: 1;
+    text-shadow: none;
+  }
+}
+
+.pv-top-card__edit-photo .profile-photo-edit__preview {
+  position: relative;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background for better visibility */
+  border: 2px solid #00FF00; /* Neon green border */
+  box-shadow: 0 0 10px #00FF00; /* Neon green glow */
+  animation: glitch 0.6 infinite;
+}
+
+.pv-top-card__edit-photo .profile-photo-edit__preview::before,
+.pv-top-card__edit-photo .profile-photo-edit__preview::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00FF00; /* Neon green border */
+  box-shadow: 0 0 10px #00FF00; /* Neon green glow */
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 0.3 infinite;
+}
+
+.pv-top-card__edit-photo .profile-photo-edit__preview::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00ff;
+  animation: glitch 0.3 infinite;
+}
+
+.pv-top-card__edit-photo .profile-photo-edit__preview::after {
+  left: -2px;
+  text-shadow: -2px 0 #00ffff;
+  animation: glitch 0.3 infinite reverse;
+}
+
+
+.global-nav {
+    background-color: #454545 !important;
+    border-bottom: 1px solid rgb(87 87 87)!important;
+}
+
+.global-nav__primary-link-text {
+    color: rgb(110 255 130 / 60%)!important;
+}
+
+.yvEFPdwDiKnTbJSIrgbbbxROfRuFXGFnts {
+    background: #252525 !important;
+}
+
+.scaffold-layout__main{
+  background: #242222 !important;
+}
+
+.scaffold-layout-toolbar{
+      background: #d16868 !important;
+}
+
+
+
+/* Falling down animation */
+@keyframes fallDown {
+  0% { transform: translateY(-100vh); }
+  50% { transform: translateY(100vh); }
+  100% { transform: translateY(0); }
+}
+
+/* Going up fast animation */
+@keyframes goUpFast {
+  0% { transform: translateY(100vh); }
+  50% { transform: translateY(-100vh); }
+  100% { transform: translateY(0); }
+}
+
+/* Applying the animation initially */
+.falling {
+  animation: fallDown 3s linear infinite;
+}
+
+/* Applying the fast upward movement */
+.goingUpFast {
+  animation: goUpFast 0.5s linear infinite;
+}
